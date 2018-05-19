@@ -1,0 +1,7 @@
+<button (click)="novo()" >Novo</button>
+  <ul>
+    <li *ngFor="let item of items | async">
+      {{ item.descricao }} {{ item.marca }} {{ item.ano }} <button (click)="excluir(item.id)" >Excluir</button>
+      <button (click)="alterar(item.id)" >Alterar</button>
+    </li>
+  </ul>

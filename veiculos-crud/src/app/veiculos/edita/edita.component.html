@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit(form)" novalidate #form="ngForm">
+  <div class="form-group">
+    <label>Descrição</label>
+    <input type="text" [(ngModel)]="item.descricao" name="descricao"  #descricaoField="ngModel" required>
+    <p *ngIf="descricaoField.touched && descricaoField.invalid" class="alert alert-danger">Descrição é obrigatória.</p>
+  </div>
+  <div class="form-group">
+    <label>Marca</label>
+    <input type="text" [(ngModel)]="item.marca" name="marca"  #marcaField="ngModel" required>
+    <p *ngIf="marcaField.touched && marcaField.invalid" class="alert alert-danger">Marca é obrigatória.</p>
+  </div>
+  <div class="form-group">
+    <label>Ano</label>
+    <input type="text" [(ngModel)]="item.ano" name="ano"  #anoField="ngModel" required>
+    <p *ngIf="anoField.touched && anoField.invalid" class="alert alert-danger">Ano é obrigatório.</p>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Salvar</button>
+</form>
+
+<p>
+  {{item|json}}
+</p>
